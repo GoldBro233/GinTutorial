@@ -19,6 +19,9 @@ type Config struct {
 		Name     string
 		Charset  string
 	}
+	Bcrypt struct {
+		Cost int
+	}
 }
 
 var AppConfig *Config

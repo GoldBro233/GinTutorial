@@ -1,8 +1,8 @@
 package main
 
 import (
-	"GinWithGormTutorial/config"
-	"GinWithGormTutorial/router"
+	"GinTutorial/config"
+	"GinTutorial/router"
 )
 
 func main() {

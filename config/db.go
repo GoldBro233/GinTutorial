@@ -1,7 +1,7 @@
 package config
 
 import (
-	"GinWithGormTutorial/global"
+	"GinTutorial/global"
 	"fmt"
 	"log"
 	"time"
@@ -11,7 +11,7 @@ import (
 )
 
 func buildDSN(user, password, host, port, db, charset string) string {
-	template := "%s:%s@tcp(%s:%s)/%s?charset=%s"
+	template := "%s:%s@tcp(%s:%s)/%s?charset=%s&parseTime=true"
 	return fmt.Sprintf(template, user, password, host, port, db, charset)
 }
 

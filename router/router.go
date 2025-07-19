@@ -1,6 +1,10 @@
 package router
 
-import "github.com/gin-gonic/gin"
+import (
+	"GinTutorial/controllers"
+
+	"github.com/gin-gonic/gin"
+)
 
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
@@ -10,12 +14,8 @@ func SetupRouter() *gin.Engine {
 		{
 			auth := v1.Group("/auth")
 			{
-				auth.POST("/login", func(context *gin.Context) {
-					context.JSON(200, gin.H{
-						"msg": "Login successfully",
-					})
-				})
-				auth.POST("/register")
+				auth.POST("/login", controllers.Login)
+				auth.POST("/register", controllers.Register)
 			}
 		}
 	}
