@@ -22,6 +22,9 @@ type Config struct {
 	Bcrypt struct {
 		Cost int
 	}
+	Jwtconfig struct {
+		Secret string
+	}
 }
 
 var AppConfig *Config

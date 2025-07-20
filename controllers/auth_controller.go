@@ -5,7 +5,6 @@ import (
 	"GinTutorial/models"
 	"GinTutorial/utils"
 	"net/http"
-	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -44,7 +43,7 @@ func Register(ctx *gin.Context) {
 		return
 	}
 
-	token, err := utils.GenerateJWT(strconv.Itoa(int(user.ID)))
+	token, err := utils.GenerateJWT(user.Username)
 
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{
@@ -87,7 +86,7 @@ func Login(ctx *gin.Context) {
 		return
 	}
 
-	token, err := utils.GenerateJWT(strconv.Itoa(int(user.ID)))
+	token, err := utils.GenerateJWT(user.Username)
 
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{
